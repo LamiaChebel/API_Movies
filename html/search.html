@@ -26,19 +26,20 @@
 
         <main id="searchPage">
 
-            <div id="searchMovies">
+            <form  action="" method="get"  id="searchMovies">
 
-                <i class="fa-solid fa-magnifying-glass fa-bounce"></i>
-                <input type="search" name="search" id="search" placeholder="Entry keywords to get your movie" aria-placeholder="search movies with keywords">
+                <input type="text" name="search" id="search" placeholder="Entry keywords to get your movie" aria-label="search movies with keywords through site content">
+                <button type="submit" value="Search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
 
-
-            </div>
+            </form>
 
             <!-- Ajouter avec js dans une section l'article les éléments h3, img, 4*p et a qui représentent nos données sur le film trouvé -->
 
 
         </main>
 
-        <script type="module" src="../js/main.js"></script>
+        <script type="module" src="../js/search.js"></script>
     </body>
 </html>
