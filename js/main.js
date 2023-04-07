@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function(){
 
-    document.querySelector("section").appendChild(document.createElement("div"));
+    const div=document.querySelector("section").appendChild(document.createElement("div"));
+    div.setAttribute("id","display");
 
     let url = new URL("https://api.themoviedb.org/3/trending/movie/week?api_key=58051e21a60016eadf0e959e12d53e24");
 
@@ -12,23 +13,18 @@ document.addEventListener("DOMContentLoaded", function(){
 
                 const article = document.createElement("article");
                 document.querySelector("div").appendChild(article);
-                article.style.flex = "0 1 30%";
 
             
                 const titleMovie = document.createElement("h3");
                 article.appendChild(titleMovie);
                 titleMovie.textContent = `${result.title}`;
-                titleMovie.style.textAlign="center";
 
 
                 const image = document.createElement("img");
                 article.appendChild(image);
-                image.setAttribute("src", `https://image.tmdb.org/t/p/w300${result.poster_path}`);
+                image.setAttribute("src", `https://image.tmdb.org/t/p/w300/${result.poster_path}`);
                 image.setAttribute("alt", "");
-                image.style.margin=" 10% 14%";
-                
-
-
+              
                 const p1 = document.createElement("p");
                 article.appendChild(p1);
                 p1.textContent = `vote count : ${result.vote_count}`;
@@ -52,15 +48,6 @@ document.addEventListener("DOMContentLoaded", function(){
             
         })
         .catch(err => console.error(err));
-
-        document.querySelector("div").style.width="90%";
-        document.querySelector("div").style.margin="auto";
-
-
-    document.querySelector("div").style.display="flex";
-    document.querySelector("div").style.flexFlow="row wrap";
-    document.querySelector("div").style.justifyContent = "space-around"; 
-    document.querySelector("div").style.gap = "20px"; 
 
 
 })
